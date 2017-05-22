@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <!--<h2>Find local Events HERE AND NOW!</h2> --> 
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="http://www.usaffitfamily.com/images/720/0/family-fun-6-1-12-top.jpg" alt="fampic" style="width:100%; height: 250px;">
+      </div>
+
+      <div class="item">
+        <img src="http://press.miamiandbeaches.com/~/media/images/gmcvb/pressroom/story%20ideas/large%20images/family-fun-612-x-338.jpg" alt="famwaterpic" style="width:100%; height: 250px;">
+      </div>
+    
+      <div class="item">
+        <img src="http://www.jenningswire.com/wp-content/uploads/2013/06/Fun-with-friends.jpg" alt="FriendsDrinks" style="width:100%; height: 250px; ">
+      </div>
+
+       <div class="item">
+        <img src="https://c1.staticflickr.com/9/8752/17037758496_4f558a4290_b.jpg" alt="ColorFriends" style="width:100%; height: 250px;">
+      </div>
+
+       <div class="item">
+        <img src="http://s3.favim.com/orig/45/big-friendly-friends-fun-gif-Favim.com-403419.jpg" alt="Underwater" style="width:100%; height: 250px;">
+      </div>
+
+      <div class="item">
+        <img src="http://www.mellowes.ie/wp-content/gallery/family/awsome-fun-for-kids-at-mellowes-adventure-centre-athboy-county-meath.jpg" alt="KidsWallclimb" style="width:100%; height: 250px;">
+      </div>
+    </div>
+
+     <!-- <div class="item">
+        <img src="ny.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div> -->
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="jumbotron" style="width:100%; height: 230px;">
+    <h1>Here-And-Now!!! <h3> Local Event Finder</h3></h1>      
+    <p>Looking for something to do where you are, right now?
+    A few clicks get you fun info! </p>         
+</div>
+
+<div class="container">
+<p> What is your NAME?
+<input type="text" placeholder="Enter Your Name" name="UserName">
+
+<p> WHO do you need to entertain?
+<label class="radio-inline"><input type="radio" name="optradio">Kids</label>
+<label class="radio-inline"><input type="radio" name="optradio">Adults</label>
+</p>
+
+<p> Cost?
+    <label class="radio-inline"><input type="radio" name="optradio">Paid
+
+    <label class="radio-inline"><input type="radio" name="optradio">Free</label>
+</p>
+
+<p> WHERE are you located?
+    <input type="text" placeholder="Enter City" name="city">
+    <input type="text" placeholder="Enter State" name="state">
+    <input type="text" placeholder="Enter Zip Code" name="zipcode">
+</p>
+
+    <div class="form-group">
+  <form action="/action_page.php">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+  
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
