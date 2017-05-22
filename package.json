@@ -1,0 +1,28 @@
+{
+  "name": "hereandnow",
+  "version": "1.0.0",
+  "description": "Event Finder App: Activity and Event finder for families, friends and individuals Finds events available within the user's specified radius at that moment",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.8",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwyanalford/hereandnow.git"
+  },
+  "author": "Dwyan, Lungisa, Rafic, Dereck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwyanalford/hereandnow/issues"
+  },
+  "homepage": "https://github.com/dwyanalford/hereandnow#readme"
+}
