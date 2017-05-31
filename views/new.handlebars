@@ -1,0 +1,44 @@
+{{!-- form for creating a new event --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2>Create an Event</h2>
+                    </div>
+                    <div class="panel-body">
+                        <form id="createEventForm" action="/api/new_events" method="POST">
+                            <div class="form-group">
+                                <label for="name">Event Name:</label>
+                                <input type="text" class="form-control" name="name">
+                                <br />
+                                <label for="date">Event Date:</label>
+                                <input type="text" class="form-control" name="date" placeholder="MM-DD-YY">
+                                <br />
+                                <label for="time">Time:</label>
+                                <input type="text" class="form-control" name="time" placeholder="X:XXpm">
+                                <br />
+                                <label for="venue">Location:</label>
+                                <input type="text" class="form-control" name="venue">
+                                <br />
+                                <label for="description">Description:</label>
+                                <textarea class="form-control" rows="6" name="description" placeholder="Describe Event"></textarea>
+                                <div class="form-group">
+                                    <label for="category">Event Type:</label>
+                                    <select class="form-control" name="category">
+                                      <option value="Arts/Culture/Music">Arts/Culture/Music</option>
+                                      <option value="Meetings/Conferences">Meetings/Conferences</option>
+                                      <option value="Sports/Outdoors">Sports/Outdoors</option>
+                                  </select>
+                                </div>
+                                <br />
+                                <button type="submit" class="btn btn-lg btn-success submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>

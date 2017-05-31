@@ -13,7 +13,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // POST route for saving a new event to database
-  app.post("/api/events", function(req, res) {
+  app.post("/api/new_events", function(req, res) {
     console.log(req.body);
     db.Event.create({
       name: req.body.name,
@@ -24,15 +24,7 @@ module.exports = function(app) {
       category: req.body.category
     })
     .then(function(dbEvent) {
-      res.json(dbEvent);
-    });
-  });
-
-  // GET route for getting all of the events in db
-  app.get("/api/events", function(req, res) {
-    db.Event.findAll({})
-    .then(function(dbEvent) {
-      res.json(dbEvent);
+      res.redirect("/success");
     });
   });
 
@@ -46,6 +38,19 @@ module.exports = function(app) {
     .then(function(dbEvent) {
       res.json(dbEvent);
     });
+  });
+
+    // PUT route for updating posts
+  app.put("/api/new_events", function(req, res) {
+    db.Event.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbPost) {
+        res.json(dbPost);
+      });
   });
 
   

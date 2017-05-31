@@ -2,9 +2,19 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+#topNavs {
+    float: right;
+    width: 400px;
+    z-index: 2;
+}
+
 #eventit {
     font-family: 'Barrio', cursive;
     font-size: 125px;
+}
+
+span {
+    color: #5F9FCF;
 }
 
 .top-30 {
