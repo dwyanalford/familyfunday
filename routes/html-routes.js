@@ -4,25 +4,39 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
+// var path = require("path");
+var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-	// index route loads home page
+	// loads index.handlebars page initially
 	app.get("/", function(req, res) {
-	    res.sendFile(path.join(__dirname + "/../public/index.html"));
+		res.render("index");
 	});
 
-	// new.html route loads/displays form to create new events
+	// loads new.handlebars page after "create event" button
+	// click 
 	app.get("/new", function(req, res) {
-	    res.sendFile(path.join(__dirname + "/../public/new.html"));
+		res.render("new");
 	});
-
-	// events.html route loads/displays all events in the database
+		
+	// loads events.handlebars page after "search events" button
+	// and finds all events to display on client
 	app.get("/events", function(req, res) {
-	    res.sendFile(path.join(__dirname + "/../public/events.html"));
-	});
+	   	db.Event.findAll({
+	   		order: ['date']
+	    }).then(function(data) {
+	      res.render("events", {Events: data});
+	    });
+  	});
+
+  	// loads success.handlebars page after successful
+	// submission of form inputs into the database
+	app.get("/success", function(req, res) {
+	    res.render("success");
+  	});
+
 
 };
