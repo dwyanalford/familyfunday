@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Here and Now Event Entertainment</title>
+    <script type="handlebars-v4.0.2.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- location where information is generated on our screen -->
+    <div id ="dereckData"></div>
+
+    <!-- where the javascript goes -->
+    <script type="text/javascript">
+
+    // how data will be displayed on the screeen
+    var myInfo = "<p>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}<p>";
+
+    var template = Handlebars.compile(myInfo);
+
+    var data = template({name: "Dereck" })
+
+    </script>
+
+
+    <div class="homepage-hero-module">
+        <div class="video-container">        
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth">
+                <source src="coverr/MP4/Draw-Something.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                <source src="coverr/WEBM/Draw-Something.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            </video>
+            <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1 id="eventit" class="animated zoomIn">EVENTIT</h1>
+            <!-- <h3 class="animated slideInLeft">We create, you celebrate.</h3> -->
+            <br>
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <!-- <div class="panel panel-login"> -->
+                        <div class="panel panel-body">
+                            <h3 class="animated slideInLeft">We create, you celebrate.</h3>
+                            <p class="lead">Search or Create events in the DC,<br> 
+                            Maryland and Virginia Area</p> 
+                                <div class="col-md-6">
+                                    <a class="btn btn-primary btn-lg" href="/events">Search Events</a> 
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn btn-success btn-lg" href="/new">Create an Event</a> 
+                                </div>
+
+                        </div>
+                     <!--    <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#" id="register-form-link">Register</a>
+                            </div>
+                        </div>
+                        <hr> -->
+                    
+                 <!--    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </form> -->
+                               <!--  <form id="register-form" action="#" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                    </div>                                    
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="login-submit" id="register-submit" tabindex="4" class="form-control btn btn-login" value="Sign Up">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form> -->
+                                <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+           <!--  <div class="poster hidden">
+                <img src="coverr/Snapshots/Draw-Something.jpg" alt="">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- About -->
+    <!-- <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Browse a list of events near you</h2>
+                    <p class="lead">Use the search tool to search current events near you <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form></p>
+
+                </div>
+            </div> -->
+            <!-- /.row -->
+        <!-- </div> -->
+        <!-- /.container -->
+    <!-- </section> -->
+
+    
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/custom.js" type="text/javascript"></script>
+    <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/allevents.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>
