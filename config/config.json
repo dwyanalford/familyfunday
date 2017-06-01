@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "Askia16!",
+    "password": "",
     "database": "data_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Askia16!",
+    "password": "",
     "database": "database_test",
     "host": "localhost",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "Askia16!",
+    "password": "",
     "database": "database_production",
     "host": "localhost",
     "dialect": "mysql"
