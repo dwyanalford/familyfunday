@@ -11,10 +11,10 @@
                         <form id="createEventForm" action="/api/events" method="POST">
                             <div class="form-group">
                                 <label for="name">Event Name:</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" value="{{this.name}}">
                                 <br />
                                 <label for="date">Event Date:</label>
-                                <input type="text" class="form-control" name="date" placeholder="MM-DD-YY">
+                                <input type="text" class="form-control" name="date" placeholder="MM-DD-YY" value="{{this.date}}">
                                 <br />
                                 <label for="time">Time:</label>
                                 <input type="text" class="form-control" name="time" placeholder="X:XXpm">

@@ -26,7 +26,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     category: {
       type: DataTypes.STRING,
-      defaultValue: "Music/Festival",
+      allowNull: false,
+      defaultValue: "All",
     }
   });
   return Event;

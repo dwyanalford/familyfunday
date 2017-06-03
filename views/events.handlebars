@@ -1,24 +1,49 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8 panel panel-default">
-			<h1>Upcoming Events</h1>
-			<hr>
-		
-			
-			{{!-- <div class="panel panel-default"> --}}
-				<div class="panel-body">
-			{{#each Events}}
-			    <h2>{{this.name}}<small>&nbsp;&nbsp;{{this.date}}</small></h2>
-				<h5><span>Time:</span> {{this.time}}   ||   <span>Venue:</span> {{this.venue}}</h5>
-				<h5><span>Category:</span> {{this.category}}</h5>
-			    <p><span>Details:</span> {{this.description}}</p>
-			    <hr>
-			{{/each}}
-				</div>
-			{{!-- </div> --}}
+	<div class="row top-30">
+		<div class="col-md-3 top-30">
+  			<div>
+  				<h4>Events by Category</h4>
+  			</div>
+  			<div class="list-group">
+				<a class="list-group-item" href="/events">All Events</a>
+				<a class="list-group-item" href="/events-conference">Conference</a>
+				<a class="list-group-item" href="/events-cultural">Cultural</a>
+				<a class="list-group-item" href="/events-social">Social</a>
+				<a class="list-group-item" href="/events-sports">Sports</a>
+  			</div>
+			{{!-- <div class="form-group">
+		    	<select class="form-control" id="category">
+			        <option selected value="">All Categories</option>
+			        <option value="Conference">Conference</option>
+			        <option value="Cultural">Cultural</option>
+			        <option value="Sports">Sports</option>
+		        </select>
+		    </div> --}}
 		</div>
-		
-		<div class="col-md-2"></div>
+		<div class="col-md-8 event-container">
+				<h1>Upcoming Events</h1>
+				<hr>
+				<ul class="list-group">
+					<li class="list-group-item">
+						{{#each Events}}
+						    <h2>{{this.name}}<small>&nbsp;&nbsp;{{this.date}}</small></h2>
+							<h4><span>Time:</span> {{this.time}}</h4>
+							<h4><span>Venue:</span> {{this.venue}}</h4>
+							<h4>Category:<span style="color: #5F9FCF">&nbsp;{{this.category}}</span></h4>
+						    <p><span>Details:</span> {{this.description}}</p>
+						    
+						    	
+								    <form action="/api/events/{{this.id}}" method="POST" class="col-md-2">
+							          <input type="hidden" name="id" value="{{this.id}}">
+							          <button type="submit" class="btn btn-danger">Delete Event</button>
+							        </form>
+							          <a href="/new" type="submit" class="btn btn-success">Update</a>
+							        <br>
+							        <hr>
+						{{/each}}
+					</li>
+				</ul>
+		</div>
+		<div class="col-md-1"></div>
 	</div>
 </div>

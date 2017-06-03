@@ -21,6 +21,12 @@ module.exports = function(app) {
 	app.get("/new", function(req, res) {
 		res.render("new");
 	});
+
+  // loads new.handlebars page after "create event" button
+  // click 
+  app.get("new/:id", function(req, res) {
+    res.render("new");
+  });
 		
 	// loads events.handlebars page after "search events" button
 	// and finds all events to display on client
@@ -37,6 +43,57 @@ module.exports = function(app) {
 	app.get("/success", function(req, res) {
 	    res.render("success");
   	});
+
+ 	app.get("/events-conference", function(req, res) {
+	   	db.Event.findAll({
+      where: {
+        category: "Conference"
+      }
+    })
+    .then(function(data) {
+      res.render("events", {Events: data});
+      console.log(data);
+	    });
+  	});
+
+ 	app.get("/events-cultural", function(req, res) {
+	   	db.Event.findAll({
+      where: {
+        category: "Cultural"
+      }
+    })
+    .then(function(data) {
+      res.render("events", {Events: data});
+      console.log(data);
+	    });
+  	});  
+
+ 	app.get("/events-sports", function(req, res) {
+	   	db.Event.findAll({
+      where: {
+        category: "Sports"
+      }
+    })
+    .then(function(data) {
+      res.render("events", {Events: data});
+      console.log(data);
+	    });
+  	});
+
+ 	app.get("/events-social", function(req, res) {
+	   	db.Event.findAll({
+      where: {
+        category: "Social"
+      }
+    })
+    .then(function(data) {
+      res.render("events", {Events: data});
+      console.log(data);
+	    });
+  	});
+
+
+
 
 
 };

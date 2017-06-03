@@ -13,8 +13,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // POST route for saving a new event to database
-  app.post("/api/new_events", function(req, res) {
-    console.log(req.body);
+  app.post("/api/events", function(req, res) {
     db.Event.create({
       name: req.body.name,
       date: req.body.date,
@@ -24,34 +23,52 @@ module.exports = function(app) {
       category: req.body.category
     })
     .then(function(dbEvent) {
+      console.log(dbEvent);
       res.redirect("/success");
+
     });
   });
 
-  // Get route for returning events of a specific category
-  app.get("/api/events/category/:category", function(req, res) {
-    db.Event.findAll({
+  // Route for deleting events
+  app.post("/api/events/:id", function(req, res) {
+    db.Event.destroy({
       where: {
-        category: req.params.category
+        id: req.params.id
       }
     })
     .then(function(dbEvent) {
-      res.json(dbEvent);
+      res.redirect("/events");
+      console.log(dbEvent);
     });
   });
 
-    // PUT route for updating posts
-  app.put("/api/new_events", function(req, res) {
-    db.Event.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbPost) {
-        res.json(dbPost);
-      });
+   // Route for updating events
+  app.put("/api/events", function(req, res) {
+    db.Event.update({
+      name: req.body.name,
+      date: req.body.date,
+      time: req.body.time,
+      venue: req.body.venue,
+      description: req.body.description,
+      category: req.body.category
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(event) {
+      console.log(event);
+      res.json(event);
+
+    });
   });
 
-  
 };
+
+
+
+
+
+
+
+
+
