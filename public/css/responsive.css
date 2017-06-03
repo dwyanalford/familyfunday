@@ -1,0 +1,11 @@
+@media only screen and (max-width: 768px) {
+    video {
+    display: none;
+    }
+
+    .btn {
+    margin-bottom: 20px;
+    z-index: 100;
+    }
+
+}
