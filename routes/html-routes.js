@@ -25,7 +25,8 @@ module.exports = function(app) {
   // loads new.handlebars page after "create event" button
   // click 
   app.get("new/:id", function(req, res) {
-    res.render("new");
+    console.log(req.params.id);
+    res.render("new",{eventId: req.params.id});
   });
 		
 	// loads events.handlebars page after "search events" button
