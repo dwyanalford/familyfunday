@@ -23,20 +23,21 @@
                                 <input type="text" class="form-control" name="venue" value="{{Update.venue}}">
                                 <br />
                                 <label for="description">Description:</label>
-                                <textarea class="form-control" rows="6" name="description" 
-                                value="{{Update.description}}"></textarea>
+                                <input type="textarea" class="form-control" rows="6" name="description" 
+                                value="{{Update.description}}">
+                                <br />
                                 <div class="form-group">
                                     <label for="category">Event Type:</label>
-                                    <select class="form-control" name="category" value="{{Update.category}}">
-                                      <option value="Conference">Conference</option>
-                                      <option value="Cultural">Cultural</option>
-                                      <option value="Sports">Social</option>
-                                      <option value="Sports">Sports</option>
+                                    <select class="form-control" name="category">
+                                      <option name="" value="Conference">Conference</option>
+                                      <option name="" value="Cultural">Cultural</option>
+                                      <option name="" value="Social">Social</option>
+                                      <option name="" value="Sports">Sports</option>
                                   </select>
                                 </div>
                                 <div class="col-md-2"></div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-lg btn-danger" href="/events">Cancel</a>
+                                    <a class="btn btn-lg btn-danger" href="/events" style="margin-top: 8px;">Cancel</a>
                                 </div>
                                 <div class="col-md-2"></div>
                                 <div class="col-md-2">

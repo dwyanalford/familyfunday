@@ -2,7 +2,6 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
-var methodOverride = require("method-override");
 
 // Create an instance of the express app.
 var app = express();
@@ -20,9 +19,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("./public"));
-
-// Override with POST having ?_method=DELETE
-app.use(methodOverride("_method"));
 
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

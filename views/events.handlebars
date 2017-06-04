@@ -1,3 +1,4 @@
+{{!-- main events page listing of all events with filter by category option --}}
 <div class="container">
 	<div class="row top-30">
 		<div class="col-md-3 top-30">
@@ -13,40 +14,38 @@
   			</div>
 		</div>
 		<div class="col-md-8">
-				<h1>Upcoming Events</h1>
-				<hr>
+			<div class="panel panel-default" style="width: 90%;">
+				<div class="panel-heading">
+					<h1>Upcoming Events</h1>
+				</div>
+			    <!-- List group -->
 				<ul class="list-group">
-				
 					<li class="list-group-item">
 					{{#each Events}}
-						    <h2>{{this.name}}<small>&nbsp;&nbsp;{{this.date}}</small></h2>
-							<h4><span>Time:</span> {{this.time}}</h4>
-							<h4><span>Venue:</span> {{this.venue}}</h4>
-							<h4>Category:<span style="color: #5F9FCF">&nbsp;{{this.category}}</span></h4>
-						    <p><span>Details:</span> {{this.description}}</p>
-							<form action="/api/events/{{this.id}}" method="POST" class="col-md-2">
+				    	<h2>{{this.name}}</h2>
+				    	<h3>{{this.date}}</h3>
+				    	<h4><span>Time:</span> {{this.time}}</h4>
+				    	<h4><span>Venue:</span> {{this.venue}}</h4>
+				    	<h4>Category:<span style="color: #5F9FCF">&nbsp;{{this.category}}</span></h4>
+				    	<p><span>Details:&nbsp;</span>{{this.description}}</p>
+				    	<div class="row">
+				    		<div class="col-md-1"></div>
+				    		<div class="col-md-2">
+					    	<form action="/api/events/{{this.id}}" method="POST">
 								<input type="hidden" name="id" value="{{this.id}}">
 								<button type="submit" class="btn btn-danger">Delete</button>
 							</form>
+							</div>
+							<div class="col-md-2" style="padding-top: 8px;">
 							<a href="/update/{{this.id}}" type="submit" class="btn btn-success">Update</a>
-							<hr>   
-					  
-						    	
-								    <form action="/api/events/{{this.id}}" method="POST" class="col-md-2">
-							          <input type="hidden" name="id" value="{{this.id}}">
-							          <button type="submit" class="btn btn-danger">Delete Event</button>
-							        </form>
-							        <form action="/new" method="POST" class="col-md-2">
-							          <input type="hidden" name="id" value="{{this.id}}">
-							          <button type="submit" class="btn btn-success">Update</button>
-							        </form>
-							     
-							        <br>
-							        <hr>
-						{{/each}}
-					</li>
-				</ul>
-		</div>
+							</div>
+						</div>
+						<hr>
+			    {{/each}}
+			    </li>
+				
+			</div>
+		</div>					   
 		<div class="col-md-1"></div>
 	</div>
 </div>
