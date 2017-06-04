@@ -24,14 +24,26 @@
 							<h4><span>Venue:</span> {{this.venue}}</h4>
 							<h4>Category:<span style="color: #5F9FCF">&nbsp;{{this.category}}</span></h4>
 						    <p><span>Details:</span> {{this.description}}</p>
-						    
 							<form action="/api/events/{{this.id}}" method="POST" class="col-md-2">
 								<input type="hidden" name="id" value="{{this.id}}">
 								<button type="submit" class="btn btn-danger">Delete</button>
 							</form>
 							<a href="/update/{{this.id}}" type="submit" class="btn btn-success">Update</a>
 							<hr>   
-					{{/each}}    	   
+					  
+						    	
+								    <form action="/api/events/{{this.id}}" method="POST" class="col-md-2">
+							          <input type="hidden" name="id" value="{{this.id}}">
+							          <button type="submit" class="btn btn-danger">Delete Event</button>
+							        </form>
+							        <form action="/new" method="POST" class="col-md-2">
+							          <input type="hidden" name="id" value="{{this.id}}">
+							          <button type="submit" class="btn btn-success">Update</button>
+							        </form>
+							     
+							        <br>
+							        <hr>
+						{{/each}}
 					</li>
 				</ul>
 		</div>

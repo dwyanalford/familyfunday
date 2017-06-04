@@ -20,7 +20,6 @@ module.exports = function(app) {
 	app.get("/new", function(req, res) {
 		res.render("new");
 	});
-
   
   // loads update form page for unique user
   app.get("/update/:id", function(req, res) {
@@ -32,7 +31,12 @@ module.exports = function(app) {
     .then(function(data) {
         res.render("update", {Update: data});
       });
-    
+
+  // loads new.handlebars page after "create event" button
+  // click 
+  app.get("new/:id", function(req, res) {
+    console.log(req.params.id);
+    res.render("new",{eventId: req.params.id});
   });
 		
 	// loads events.handlebars page after "search events" button
