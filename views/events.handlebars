@@ -11,36 +11,27 @@
 				<a class="list-group-item" href="/events-social">Social</a>
 				<a class="list-group-item" href="/events-sports">Sports</a>
   			</div>
-			{{!-- <div class="form-group">
-		    	<select class="form-control" id="category">
-			        <option selected value="">All Categories</option>
-			        <option value="Conference">Conference</option>
-			        <option value="Cultural">Cultural</option>
-			        <option value="Sports">Sports</option>
-		        </select>
-		    </div> --}}
 		</div>
-		<div class="col-md-8 event-container">
+		<div class="col-md-8">
 				<h1>Upcoming Events</h1>
 				<hr>
 				<ul class="list-group">
+				
 					<li class="list-group-item">
-						{{#each Events}}
+					{{#each Events}}
 						    <h2>{{this.name}}<small>&nbsp;&nbsp;{{this.date}}</small></h2>
 							<h4><span>Time:</span> {{this.time}}</h4>
 							<h4><span>Venue:</span> {{this.venue}}</h4>
 							<h4>Category:<span style="color: #5F9FCF">&nbsp;{{this.category}}</span></h4>
 						    <p><span>Details:</span> {{this.description}}</p>
 						    
-						    	
-								    <form action="/api/events/{{this.id}}" method="POST" class="col-md-2">
-							          <input type="hidden" name="id" value="{{this.id}}">
-							          <button type="submit" class="btn btn-danger">Delete Event</button>
-							        </form>
-							          <a href="/new" type="submit" class="btn btn-success">Update</a>
-							        <br>
-							        <hr>
-						{{/each}}
+							<form action="/api/events/{{this.id}}" method="POST" class="col-md-2">
+								<input type="hidden" name="id" value="{{this.id}}">
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</form>
+							<a href="/update/{{this.id}}" type="submit" class="btn btn-success">Update</a>
+							<hr>   
+					{{/each}}    	   
 					</li>
 				</ul>
 		</div>

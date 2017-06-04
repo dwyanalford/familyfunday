@@ -11,21 +11,28 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-	// loads index.handlebars page initially
+	// loads the initial landing page of the app
 	app.get("/", function(req, res) {
 		res.render("index");
 	});
 
-	// loads new.handlebars page after "create event" button
-	// click 
+	// loads the create event form page
 	app.get("/new", function(req, res) {
 		res.render("new");
 	});
 
-  // loads new.handlebars page after "create event" button
-  // click 
-  app.get("new/:id", function(req, res) {
-    res.render("new");
+  
+  // loads update form page for unique user
+  app.get("/update/:id", function(req, res) {
+    db.Event.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(data) {
+        res.render("update", {Update: data});
+      });
+    
   });
 		
 	// loads events.handlebars page after "search events" button

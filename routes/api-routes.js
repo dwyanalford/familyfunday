@@ -25,11 +25,10 @@ module.exports = function(app) {
     .then(function(dbEvent) {
       console.log(dbEvent);
       res.redirect("/success");
-
     });
   });
 
-  // Route for deleting events
+  // Route for deleting events from database 
   app.post("/api/events/:id", function(req, res) {
     db.Event.destroy({
       where: {
@@ -42,8 +41,8 @@ module.exports = function(app) {
     });
   });
 
-   // Route for updating events
-  app.put("/api/events", function(req, res) {
+   // Route for updating events in database
+  app.post("/api/events/update/:id", function(req, res) {
     db.Event.update({
       name: req.body.name,
       date: req.body.date,
@@ -53,12 +52,11 @@ module.exports = function(app) {
       category: req.body.category
     }, {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function(event) {
+      res.redirect("/success");
       console.log(event);
-      res.json(event);
-
     });
   });
 

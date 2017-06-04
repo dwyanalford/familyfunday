@@ -1,45 +1,55 @@
-{{!-- form for creating a new event --}}
+{{!-- form for updating an existing event --}}
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h2>Create an Event</h2>
+                        <h2>Update Form</h2>
                     </div>
                     <div class="panel-body">
-                        <form id="createEventForm" action="/api/events" method="POST">
+                        <form id="updateEventForm" action="/api/events/update/{{Update.id}}" method="POST">
                             <div class="form-group">
                                 <label for="name">Event Name:</label>
-                                <input type="text" class="form-control" name="name" value="{{this.name}}">
+                                <input type="text" class="form-control" name="name" value="{{Update.name}}">
                                 <br />
                                 <label for="date">Event Date:</label>
-                                <input type="text" class="form-control" name="date" placeholder="MM-DD-YY" value="{{this.date}}">
+                                <input type="text" class="form-control" name="date" value="{{Update.date}}">
                                 <br />
                                 <label for="time">Time:</label>
-                                <input type="text" class="form-control" name="time" placeholder="X:XXpm">
+                                <input type="text" class="form-control" name="time" value="{{Update.time}}">
                                 <br />
                                 <label for="venue">Location:</label>
-                                <input type="text" class="form-control" name="venue">
+                                <input type="text" class="form-control" name="venue" value="{{Update.venue}}">
                                 <br />
                                 <label for="description">Description:</label>
-                                <textarea class="form-control" rows="6" name="description" placeholder="Describe Event"></textarea>
+                                <textarea class="form-control" rows="6" name="description" 
+                                value="{{Update.description}}"></textarea>
                                 <div class="form-group">
                                     <label for="category">Event Type:</label>
-                                    <select class="form-control" name="category">
+                                    <select class="form-control" name="category" value="{{Update.category}}">
                                       <option value="Conference">Conference</option>
                                       <option value="Cultural">Cultural</option>
                                       <option value="Sports">Social</option>
                                       <option value="Sports">Sports</option>
                                   </select>
                                 </div>
-                                <br />
-                                <button type="submit" class="btn btn-lg btn-success submit">Submit</button>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-2">
+                                    <a class="btn btn-lg btn-danger" href="/events">Cancel</a>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-lg btn-success">Update</button>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="col-md-3"></div>
+
+
+
         </div>
     </div>
