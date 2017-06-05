@@ -48,7 +48,7 @@ module.exports = function(app) {
 	    res.render("success");
   });
 
- 	app.get("/events-conference", function(req, res) {
+ 	app.get("/events/conference", function(req, res) {
 	   	db.Event.findAll({
       where: {
         category: "Conference"
@@ -59,7 +59,7 @@ module.exports = function(app) {
 	    });
   });
 
- 	app.get("/events-cultural", function(req, res) {
+ 	app.get("/events/cultural", function(req, res) {
 	   	db.Event.findAll({
       where: {
         category: "Cultural"
@@ -70,7 +70,7 @@ module.exports = function(app) {
 	    });
   });  
 
- 	app.get("/events-sports", function(req, res) {
+ 	app.get("/events/sports", function(req, res) {
 	   	db.Event.findAll({
       where: {
         category: "Sports"
@@ -81,7 +81,7 @@ module.exports = function(app) {
 	    });
   	});
 
- 	app.get("/events-social", function(req, res) {
+ 	app.get("/events/social", function(req, res) {
 	   	db.Event.findAll({
       where: {
         category: "Social"
@@ -91,5 +91,16 @@ module.exports = function(app) {
       console.log(data);
 	    });
   	});
+    // AN ATTEMPT TO CREATE ONE ROUTE FOR CATEGORY SELECTION
+    // app.get("/events/category/:category", function(req, res) {
+    //   db.Event.findAll({
+    //   where: {
+    //     category: req.params.category
+    //   }
+    // }).then(function(data) {
+    //   res.render("events", {Events: data});
+    //   console.log(data);
+    //   });
+    // });
 
 };
